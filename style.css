@@ -1,0 +1,135 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+  background-color: #fff;
+  color: #1e1e1e;
+}
+
+/* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: #fff; /* Fixed color for the header */
+}
+
+body.light .logo h1 {
+  color: #fff; /* Keeps the header white even in light mode */
+}
+
+/* Hamburger styling */
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #333;
+  width: 200px;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.menu ul li a,
+.menu ul li button {
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  
+}
+
+.menu ul li button {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #333; /* Dark background in dark mode */
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  color: #fff; /* White text in dark mode */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* When in light mode */
+body.light .modal-content {
+  background-color: #fff; /* White background in light mode */
+  color: #333; /* Dark text in light mode */
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000; /* Darker hover effect */
+}
